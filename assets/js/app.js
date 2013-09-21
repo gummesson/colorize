@@ -12,20 +12,20 @@
   };
 
   App.render = function(color) {
-    (Config.area).style['background-color'] = color;
+    Config.area.style['background-color'] = color;
   };
 
   App.bind = function() {
-    (Config.submit).addEventListener('click', function() {
-      App.render((Config.input).value);
+    Config.submit.addEventListener('click', function() {
+      App.render(Config.input.value);
     }, false);
   };
 
   App.random = function() {
-    var randomList = Config.list,
-        randomItems = randomList.length,
-        randomColor = randomList[Math.floor(Math.random() * randomItems)];
-    App.render(randomColor);
+    var list = Config.list,
+        items = list.length,
+        color = list[Math.floor(Math.random() * items)];
+    App.render(color);
   };
 
   App.init = function() {
