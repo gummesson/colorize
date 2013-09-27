@@ -4,7 +4,7 @@
 
   var App = App || {};
 
-  var Config = {
+  var config = {
     area: document.querySelector('#js-area'),
     submit: document.querySelector('#js-submit'),
     input: document.querySelector('#js-input'),
@@ -12,17 +12,17 @@
   };
 
   App.render = function(color) {
-    Config.area.style['background-color'] = color;
+    config.area.style['background-color'] = color;
   };
 
   App.bind = function() {
-    Config.submit.addEventListener('click', function() {
-      App.render(Config.input.value);
+    config.submit.addEventListener('click', function() {
+      App.render(config.input.value);
     }, false);
   };
 
   App.random = function() {
-    var list = Config.list,
+    var list = config.list,
         items = list.length,
         color = list[Math.floor(Math.random() * items)];
     App.render(color);
